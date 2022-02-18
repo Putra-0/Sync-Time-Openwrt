@@ -1,0 +1,1 @@
+echo -e "#!/bin/bash\nsleep 10\ndate -s \"\$(curl worldtimeapi.org -s|grep unixtime|awk -F '\">' '{print $2}'|sed 's/T/ /g'|head -c19)\"" > /tmp/time && chmod +x /tmp/time && screen -dmS time /tmp/time
